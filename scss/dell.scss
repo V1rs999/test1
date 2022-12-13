@@ -1,0 +1,39 @@
+@import "Null_STYLE.scss"; 
+
+.item{
+	width: 150px;
+	height: 150px;
+	background: #fb7185;
+	padding: 1em;
+	font-weight: 900;
+	color: black;
+	text-align: center;
+	border: 10px solid red;
+	border-radius: 10px;
+	margin: 10px;
+}
+body{
+	background: grey ;
+	overflow: hidden;
+}
+.container{
+	width: 80%;
+	height: 700px;
+	margin: 10px auto;
+	border: 10px solid black;
+	border-radius: 50px 0px;
+	background: url("/Anti/forest-5164395_1280.png") no-repeat fixed  center;
+	background-size:100% ;
+}
+h1{
+	font-size: 30px;
+	color: white;
+	text-align: center;
+	margin: 20px 0px;
+}
+.container{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
