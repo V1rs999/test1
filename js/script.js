@@ -19,3 +19,19 @@ function calculateSumOfArray() {
 	console.log(sum)
 }
 calculateSumOfArray();
+
+console.log('unicFn')
+
+function unicFn(initialArray) {
+	console.log(initialArray.filter((value) => initialArray.indexOf(value) === initialArray.lastIndexOf(value)))
+}
+unicFn([1, 2, 3, 4, 5, 6, 7, 8, 9, 2, 4, 6, 8])
+// let result = [];
+
+// for (let str of initialArray) {
+// 	if (!result.includes(str)) {
+// 		result.push(str);
+// 	}
+// }
+
+// console.log(result)
