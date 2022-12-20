@@ -7,13 +7,13 @@
 // }
 
 function isEvenArray(initialArray) {
-	let result = initialArray.every(initialArray => (initialArray % 2))
-	if (result === 0) {
-		console.log('yes')
+	if (initialArray.every(element => element % 2 === 0)) {
+		console.log('Yes')
 	} else {
-		console.log('no')
+		console.log('No')
 	}
-
 }
-isEvenArray([1, 2, 3, 9])//! NO
-isEvenArray([2, 4, 6])//* Yes
+// let i = [2, 4, 6, 8].every(isEvenArray);
+// console.log(i)
+isEvenArray([3, 3, 4, 6, 6])//! NO
+isEvenArray([2, 4, 8, 6]) //* Yes
