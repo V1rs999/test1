@@ -25,33 +25,26 @@
 // filterArray([2, 'string', 3, , , 'test'])
 
 
-// function findUser(initialObject) {
-// 	const result = [];
-// 	Object.entries(initialObject).forEach(([key, value]) => {
-// 		if (value.age >= 18 && value.city === "London") {
-// 			result.push(key);
-// 		}
-// 	});
-// 	console.log(result)
+// function betterThanAverage(classPopins, yourPopins) {
+// 	console.log((classPoints.reduce((a, b) => (a + b)) / classPoints.length) > yourPoints ? false : true)
 // }
-// findUser({ Max: { age: 23, city: "London" }, Mike: { age: 20, city: "NY" }, Roma: { age: 18, city: 'London' } })
+// betterThanAverage([41, 75, 72, 56, 80, 82, 81, 33], 50)
 
-const removeObj = (a, key, value) => {
-	const pred = (e) => e[key] === value;
-	let first = a.findIndex(pred);
-	if (first !== -1) {
-		for (let i = first; i != a.length; ++i) {
-			if (!pred(a[i])) {
-				a[first++] = a[i];
-			}
-		}
-		a.splice(first, a.length - first);
-	}
+// function maps(x) {
+// 	console.log(x.reduce((m, i) => m.concat([i + i]), []))
+// }
+// maps([1, 2, 3])
+
+// function isValidIP(str) {
+// 	let temp = str.split('.')
+// 	console.log(temp.filter(el => parseInt(el).toString() == el && parseInt(el) >= 0 && parseInt(+el) <= 255).length === 4)
+// 	console.log(temp.lenght)
+// }
+// isValidIP("0.0.0.255")
+// isValidIP('')
+
+
+function pigIt(str) {
+	console.log(str.split(' ').map(x => /[a-zA-Z]+/.test(x) ? x.slice(1) + x[0] + 'ay' : x).join(' '))
 }
-
-const object = [{ age: 3 }, { age: 3 }, { age: 1 }, { age: 1 }, { age: 1 }, { age: 2 }, { year: 2 }];
-
-removeObj(object, "age", 3);
-removeObj(object, "age", 2);
-removeObj(object, "year", 2);
-console.log(object)
+pigIt('Pig latin is cool')
