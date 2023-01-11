@@ -44,10 +44,13 @@
 // isValidIP('')
 
 
-function pigIt(str) {
-	console.log(str.split(' ').map(x => /[a-zA-Z]+/.test(x) ? x.slice(1) + x[0] + 'ay' : x).join(' '))
-}
-pigIt('Pig latin is cool')
+// function pigIt(str) {
+// 	console.log(str.split(' ').map(x => /[a-zA-Z]+/.test(x) ? x.slice(1) + x[0] + 'ay' : x).join(' '))
+// }
+// pigIt('Pig latin is cool')
+
+//                                                           !                                                                                   
+
 // const calcTips = money => money >= 50 && money <= 300 ? money * 0.15 : money * 0.2
 
 // const money = [125, 555, 44]
