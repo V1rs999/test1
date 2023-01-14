@@ -6,15 +6,40 @@
 
 // console.log(money, '\n', tips, '\n', total)
 
-const roman = {
-	firstName: 'roman',
-	lastName: 'draguca',
-	age: 18,
-	city: 'berezivka'
-}
-console.log(roman)
-const nameKey = 'Name';
-console.log(roman['first' + nameKey])
-console.log(roman['last' + nameKey])
+// const roman = {
+// 	firstName: 'roman',
+// 	lastName: 'draguca',
+// 	yearBirhtDate: 2003,
+// 	age: 18,
+// 	city: 'berezivka',
+// 	friend: ['Michael', 'Peter', 'Steven'],
+// 	funck: function (yearBirhtDate) {
+// 		return 2023 - yearBirhtDate;
+// 	}
+// }
+// console.log(`${roman.firstName} has ${roman.friend.length}, and his best friend is called ${roman.friend[0]} `);
 
+// console.log(roman.funck(roman.yearBirhtDate));
+
+const BMI = (mass, height) => {
+	return mass.length / Math.pow(height, 2)
+}
+const MarkMiller = {
+	firstname: 'Mark',
+	mass: 78,
+	height: 1.69
+}
+const JohnSmith = {
+	firstname: 'John',
+	mass: 92,
+	height: 1.95
+}
+const calcBMI = () => {
+	const Mark = BMI(MarkMiller.mass, MarkMiller.height)
+	const John = BMI(JohnSmith.mass, JohnSmith.height)
+	let higher = Mark - John
+	return Mark >= John ? `Mark Miller BMI ${higher} is higher than John Smith ${John}!` : `John Smith BMI ${-1 * higher} is higher than Mark Miller ${Mark}!`
+
+}
+console.log(calcBMI());
 
