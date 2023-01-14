@@ -20,9 +20,8 @@
 // console.log(`${roman.firstName} has ${roman.friend.length}, and his best friend is called ${roman.friend[0]} `);
 
 // console.log(roman.funck(roman.yearBirhtDate));
-
 const BMI = (mass, height) => {
-	return mass.length / Math.pow(height, 2)
+	return mass / Math.pow(height, 2)
 }
 const MarkMiller = {
 	firstname: 'Mark',
@@ -37,9 +36,11 @@ const JohnSmith = {
 const calcBMI = () => {
 	const Mark = BMI(MarkMiller.mass, MarkMiller.height)
 	const John = BMI(JohnSmith.mass, JohnSmith.height)
-	let higher = Mark - John
-	return Mark >= John ? `Mark Miller BMI ${higher} is higher than John Smith ${John}!` : `John Smith BMI ${-1 * higher} is higher than Mark Miller ${Mark}!`
-
+	if (Mark >= John) {
+		return `Mark Miller BMI ${Mark} is higher than John Smith ${John}!`
+	} else {
+		return `John Smith BMI ${John} is higher than Mark Miller ${Mark}!`
+	}
 }
 console.log(calcBMI());
 
