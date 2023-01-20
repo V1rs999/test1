@@ -24,7 +24,6 @@
 // }
 // filterArray([2, 'string', 3, , , 'test'])
 
-
 // function betterThanAverage(classPopins, yourPopins) {
 // 	console.log((classPoints.reduce((a, b) => (a + b)) / classPoints.length) > yourPoints ? false : true)
 // }
@@ -43,8 +42,12 @@
 // isValidIP("0.0.0.255")
 // isValidIP('')
 
-
 function pigIt(str) {
-	console.log(str.split(' ').map(x => /[a-zA-Z]+/.test(x) ? x.slice(1) + x[0] + 'ay' : x).join(' '))
+  console.log(
+    str
+      .split(' ')
+      .map(x => (/[a-zA-Z]+/.test(x) ? x.slice(1) + x[0] + 'ay' : x))
+      .join(' ')
+  );
 }
-pigIt('Pig latin is cool')
+pigIt('Pig latin is cool');

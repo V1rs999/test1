@@ -1,17 +1,17 @@
 /*
-Let's go back to Mark and John comparing their BMIs! This time, let's use objects to implement the calculations! Remember: BMI = mass / height ** 2 = mass / (height * height). (mass in kg and height in meter)
-1. For each of them, create an object with properties for their full name, mass, and height (Mark Miller and John Smith)
-2. Create a 'calcBMI' method on each object to calculate the BMI (the same method on both objects). Store the BMI value to a property, and also return it from the method.
-3. Log to the console who has the higher BMI, together with the full name and the respective BMI. Example: "John Smith's BMI (28.3) is higher than Mark Miller's (23.9)!"
-TEST DATA: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95 m tall.
-GOOD LUCK 😀
+Given an array of forecasted maximum temperatures, the thermometer displays a string with these temperatures.
+Example: [17, 21, 23] will print "... 17ºC in 1 days ... 21ºC in 2 days ... 23ºC in 3 days ..."
+Create a function 'printForecast' which takes in an array 'arr' and logs a string like the above to the console.
+Use the problem-solving framework: Understand the problem and break it up into sub-problems!
+TEST DATA 1: [17, 21, 23]
+TEST DATA 2: [12, 5, -5, 0, 4]
 */
 
 /*
-Повернемося до порівняння ІМТ Марка та Джона! Цього разу давайте використаємо об’єкти для здійснення обчислень! Пам’ятайте: ІМТ = маса / зріст ** 2 = маса / (зріст * зріст). (маса в кг і зріст в метрах)
-1. Для кожного з них створіть об’єкт із властивостями повного імені, маси та висоти (Марк Міллер і Джон Сміт)
-2. Створіть метод «calcBMI» для кожного об’єкта, щоб обчислити ІМТ (однаковий метод для обох об’єктів). Зберігайте значення BMI у властивості, а також повертайте його з методу.
-3. Увійдіть до консолі, хто має вищий ІМТ, разом із повним ім’ям та відповідним ІМТ. Приклад: «ІМТ Джона Сміта (28,3) вищий, ніж у Марка Міллера (23,9)!»
-ДАНІ ВИПРОБУВАННЯ: Важить Марк 78 кг і має зріст 1,69 м. Вага Джона 92 кг і зріст 1,95 м.
-УСПІХІВ 😀
+На основі масиву прогнозованих максимальних температур термометр відображає рядок із цими температурами.
+Приклад: [17, 21, 23] надрукує '... 17ºC за 1 день ... 21ºC за 2 дні ... 23ºC за 3 дні ...'
+Створіть функцію printForecast, яка приймає масив arr і записує рядок, подібний до наведеного вище, на консоль.
+Використовуйте схему вирішення проблем: зрозумійте проблему та розділіть її на підпроблеми!
+ДАНІ ТЕСТУ 1: [17, 21, 23]
+ДАНІ ТЕСТУ 2: [12, 5, -5, 0, 4]
 */
