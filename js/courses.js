@@ -74,7 +74,7 @@ const temperatures = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
 
 const calcAmplitude = temperatures => {
   const temp = temperatures.filter(type => typeof type === 'number');
-  return [Math.max(...temp) - Math.min(...temp)];
+  return Math.max(...temp) - Math.min(...temp);
 };
 
 console.log(calcAmplitude(temperatures));
