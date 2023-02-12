@@ -1,20 +1,20 @@
-// const text = document.querySelector('[data-cart-empty]')
+`use strict`;
+// const text = document.querySelector('[data-cart-empty]');
 
-// if (text.textContent = Math.random() >= 0.5) {
-// 	document.getElementById('h1').innerHTML = 'Орел'
+// if ((text.textContent = Math.random() >= 0.5)) {
+//   document.getElementById('h1').innerHTML = 'Орел';
 // } else {
-// 	document.getElementById('h1').innerHTML = 'Решка'
+//   document.getElementById('h1').innerHTML = 'Решка';
 // }
 
-// function isEvenArray(initialArray) {
-// 	if (initialArray.every(element => element % 2 === 0)) {
-// 		console.log('Yes')
-// 	} else {
-// 		console.log('No')
-// 	}
-// }
-// // let i = [2, 4, 6, 8].every(isEvenArray);
-// // console.log(i)
+function isEvenArray(initialArray) {
+  if (initialArray.every(element => element % 2 === 0)) {
+    console.log('Yes');
+  } else {
+    console.log('No');
+  }
+}
+//? console.log(i)
 //? isEvenArray([3, 3, 4, 6, 6])//! NO
 //? isEvenArray([2, 4, 8, 6]) //* Yes
 
@@ -230,7 +230,7 @@ function covfefe(str) {
 // Перша літера не повинна бути малою, наприклад дорога.
 // Якщо слово не відповідає правилам, ми повертаємо «Недійсне слово».
 
-function i(word) {
+function iPhone(word) {
   if (
     word.length === 0 ||
     word[0].toLowerCase() === 'i' ||
@@ -242,7 +242,7 @@ function i(word) {
   }
   return 'i' + word;
 }
-//? console.log(i(''));
+//? console.log(iPhone(''));
 
 // Налагодити функцію getSumOfDigits, яка приймає додатне ціле число для обчислення суми його цифр. Припустимо, що аргумент є цілим числом.
 
@@ -343,7 +343,7 @@ function longest(s1, s2) {
     })
     .join('');
 }
-//? console.log(longest('aretheyhere', 'yestheyarehere'));
+// ?console.log(longest('aretheyhere', 'yestheyarehere'));
 
 // Вам буде надано масив a і значення x. Все, що вам потрібно зробити, це перевірити, чи наданий масив містить значення.
 
@@ -401,8 +401,8 @@ const flip = (d, a) => {
     return a.sort((a, b) => (a < b ? 1 : -1)); //* не понятна умова
   }
 };
-//? console.log(flip('R', [3, 2, 1, 2]));
-//? console.log(flip('L', [3, 2, 1, 2]));
+// ?console.log(flip('R', [3, 2, 1, 2]));
+// ?console.log(flip('L', [3, 2, 1, 2]));
 
 // Дано масив цілих чисел, вилучіть найменше значення. Не змінюйте оригінальний масив/список. Якщо є кілька елементів з однаковим значенням, видаліть той із нижчим індексом. Якщо ви отримуєте порожній масив/список, поверніть порожній масив/список.
 
@@ -417,4 +417,200 @@ function removeSmallest(numbers) {
   return numbers.find(el => el === 5);
 }
 
-console.log(removeSmallest([2, 4, 5, 3, 5, 1]));
+//? console.log(removeSmallest([2, 4, 5, 3, 5, 1]));
+
+// Побудуйте функцію, яка повертає безліч цілих чисел з n до 1, де n 0.
+
+// Приклад: n = 5 - [5,4,3,2,1]
+
+const reverseSeq = n => {
+  let arr = [];
+  for (let i = n; i > 0; i--) {
+    //TODO інкрементуючий цикл
+    arr.push(i);
+  }
+  return arr;
+};
+//? console.log(reverseSeq(5));
+
+// Напишіть функцію, яка приймає безліч слів і розбиває їх разом у речення і повертає речення. Ви можете ігнорувати будь -яку потребу в санітарії слів або додавання пунктуації, але слід додати проміжки між кожним словом. Будьте обережні, на початку чи кінця речення не повинно бути місця!
+
+// Приклад ['hello', 'world', 'this', 'is', 'great']  =>  'hello world this is great'
+
+function smash(words) {
+  return words.join(' ');
+}
+//? console.log(smash(['hello', 'world']));
+
+// Дуже просто, враховуючи ціле число або число з плаваючою комою, знайдіть його протилежне.
+
+// Приклади:
+// 1: -1
+// 14: -14
+// -34: 34
+
+function opposite(number) {
+  return -number;
+}
+//? console.log(opposite(-34));
+
+// Ви отримуєте напрямок, з яким ви стикаєтесь (один із 8 напрямків: N, NE, E, SE, S, SW, W, NW) та певний ступінь, щоб повернути (кратний 45, між -1080 та 1080); Позитивні засоби за годинниковою стрілкою, а негативні засоби проти годинникової стрілки.
+
+// Поверніть напрямок, з яким ви зіткнетесь після повороту.
+
+// Приклади
+// "S",  180  -->  "N"
+// "SE", -45  -->  "E"
+// "W",  495  -->  "NE"
+
+function direction(facing, turn) {
+  const array = ['S', 'SW', 'W', 'NW', 'N', 'NE', 'E', 'SE'];
+  const directions = array.indexOf(facing);
+  const step = turn / 45;
+  return array[(directions + step + 1080) % array.length];
+}
+// ? console.log(direction('SE', -45));
+
+const del = () => {
+  for (var i = 0; i < 20; i++) {
+    if (i > 15) {
+      i = -1;
+      continue;
+    }
+    return i;
+  }
+};
+// ? console.log(del())
+
+// Функція записуйте extexclamationMarks, який видаляє всі позначки оклику із заданого рядка.
+
+function removeExclamationMarks(s) {
+  return s.split('!');
+}
+// ? console.log(removeExclamationMarks('Hello World!'));
+
+// Вам дають довжину і ширину 4-лігового багатокутника. Полігон може бути прямокутником, або квадратом.
+// Якщо це квадрат, поверніть його область. Якщо це прямокутник, поверніть його периметр.
+
+// Приклад (Input1, input2 - вихід):
+
+// 6, 10 - 32
+// 3, 3 - 9
+// Примітка. Для цілей цього Ката ви припустите, що це квадрат, якщо його довжина і ширина рівні, інакше це прямокутник.
+
+const areaOrPerimeter = function (l, w) {
+  return l === w ? Math.pow(l, 2) : (l + w) * 2;
+};
+// ? console.log(areaOrPerimeter(3, 4));
+
+// Герой вирушає до замку, щоб виконати свою місію. Однак йому сказали, що замок оточений парою потужних драконів! Кожен дракон бере 2 кулі, щоб зазнати поразки, наш герой не має уявлення, скільки кулі він повинен носити .. припускаючи, що він захопить певну задану кількість куль і рухається вперед, щоб боротися з іншою конкретною даною кількістю драконів, чи виживе він?
+
+// Повернення правди, якщо так, фальшиво інакше :)
+
+function hero(bullets, dragons) {
+  return bullets >= dragons * 2 ? true : false;
+}
+// ? console.log(hero(7, 4));
+
+// Це досить просто. Ваша мета - створити функцію, яка видаляє перші та останні символи рядка. Вам надається один параметр, оригінальний рядок. Вам не потрібно турбуватися з струнами з менш ніж двома персонажами.
+
+function removeChar(str) {
+  return str.slice((0, 1), str.length - 1);
+}
+// ? console.log(removeChar('eloquent'));
+
+// Дано місяць як ціле число від 1 до 12, поверніться до якого кварталу року він належить як ціле число.
+
+// Наприклад: місяць 2 (лютий) є частиною першого кварталу; 6 місяць (червень), входить у другу чверть; і місяць 11 (листопад), є частиною четвертого кварталу.
+
+// Обмеження:
+
+// 1 = місяць = 12
+
+const quarterOf = month => {
+  return Math.ceil(month / 3);
+};
+//? console.log(quarterOf(7));
+
+// Натан любить їздити на велосипеді.
+
+// Оскільки Натан знає, що важливо залишатися зволоженим, він випиває 0,5 літра води за годину їзди на велосипеді.
+
+// Ви отримуєте час у годинах, і вам потрібно повернути кількість літрів, які вип’є Натан, округлену до найменшого значення.
+
+// Наприклад:
+function litres(time) {
+  return Math.floor(time / 2);
+}
+//? console.log(litres(2));
+
+// Напишіть функцію, яка приймає натуральне число n, підсумовує всі кубічні значення від 1 до n (включно) і повертає цю суму.
+
+// Припустимо, що вхід n завжди буде додатним цілим числом.
+
+// Приклади: (Введення -- вихід)
+
+function sumCubes(n) {
+  let result = [];
+  for (let i = 1; i <= n; i++) {
+    result.push(i);
+  }
+  return result.map(el => Math.pow(el, 3)).reduce((a, b) => a + b);
+}
+//? console.log(sumCubes(3));
+
+// Ви маєте набір слів, щоб знайти слово з найвищим балом.
+
+// Кожна літера слова отримує бали відповідно до її позиції в алфавіті: a = 1, b = 2, c = 3 тощо.
+
+// Наприклад, оцінка abad дорівнює 8 (1 + 2 + 1 + 4).
+
+// Вам потрібно повернути слово з найвищим балом у вигляді рядка.
+
+// Якщо два слова мають однакові результати, повертається слово, яке з’являється першим у вихідному рядку.
+
+// Усі літери будуть малими, і всі введені дані будуть дійсними.
+
+function high(x) {
+  const alfavit = {
+    a: 1,
+    b: 2,
+    c: 3,
+    d: 4,
+    e: 5,
+    f: 6,
+    g: 7,
+    h: 8,
+    i: 9,
+    j: 10,
+    k: 11,
+    l: 12,
+    m: 13,
+    n: 14,
+    o: 15,
+    p: 16,
+    q: 17,
+    r: 18,
+    s: 19,
+    t: 20,
+    u: 21,
+    v: 22,
+    w: 23,
+    x: 24,
+    y: 25,
+    z: 26,
+  };
+  let temp = i => i.split('').reduce((a, b) => a + alfavit[b.toLowerCase()], 0);
+  let word = x.split(' ');
+  let score = word.map(temp);
+  let index = score.indexOf(Math.max(...score));
+  return word[index];
+}
+//? console.log(high('man i need a taxi up to ubud'));
+
+function high(s) {
+  let as = s
+    .split(' ')
+    .map(s => [...s].reduce((a, b) => a + b.charCodeAt(0) - 96, 0));
+  return s.split(' ')[as.indexOf(Math.max(...as))];
+}

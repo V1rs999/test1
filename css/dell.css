@@ -8,6 +8,8 @@
     *! Ctrl + K + Ctrl + t select color theme
     *! Shift + Alt +2 life server preview
     *! Ctrl +Alt + 2
+	 *!Ctrl +Alt + ↓ / ↑ + писати одночасно в різних строчках
+	 *!For translate text = Select area +Shift + Alt + T
 */
 * {
   padding: 0;
@@ -119,7 +121,6 @@ body {
   margin: 10px auto;
   border: 10px solid black;
   border-radius: 50px 0px;
-  background: url("/Anti/forest-5164395_1280.png") no-repeat fixed center;
   background-size: 100%;
 }
 
