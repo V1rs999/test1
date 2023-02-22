@@ -600,13 +600,19 @@ function high(x) {
     y: 25,
     z: 26,
   };
-  let temp = i => i.split('').reduce((a, b) => a + alfavit[b.toLowerCase()], 0);
-  let word = x.split(' ');
-  let score = word.map(temp);
-  let index = score.indexOf(Math.max(...score));
-  return word[index];
+
+  let score = x
+    .split(' ')
+    .map(word =>
+      word.split('').reduce((sum, char) => sum + alfavit[char.toLowerCase()], 0)
+    );
+
+  let indexMax = score.indexOf(Math.max(...score));
+
+  return x.split(' ')[indexMax];
 }
-//? console.log(high('man i need a taxi up to ubud'));
+
+console.log(high('man i need a taxi up to ubud'));
 
 function high(s) {
   let as = s
@@ -614,3 +620,4 @@ function high(s) {
     .map(s => [...s].reduce((a, b) => a + b.charCodeAt(0) - 96, 0));
   return s.split(' ')[as.indexOf(Math.max(...as))];
 }
+//? console.log(high('man i need a taxi up to ubud'));

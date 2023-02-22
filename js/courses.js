@@ -171,11 +171,35 @@ const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
   players: [
-    ['Neuer', 'Pavard', 'Gnary', 'Alaba', 'Lewandowski'],
-    ['Burki', 'Schulz', 'Hummels', 'Akanji', 'Hakimi'],
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
   ],
   score: '4:0',
-  scored: ['Lewandowski', 'Gnary', 'Lewandowski', 'Hummels'],
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
   date: 'Nov 9th, 2037',
   odds: {
     team1: 1.33,
@@ -188,8 +212,104 @@ const goalKeeper = ([gk, ...other] = players1);
 const allPlayers = [...players1, ...players2];
 const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
 const gameodd = ({ team1, x: draw, team2 } = game.odds);
+
+//TODO const gameodd = (odds { team1, x: draw, team2 } = game);
 const printGoals = function (players) {
+  console.log(players);
   return players + ` ${players.length} goals`;
 };
-console.log(printGoals(game.scored));
-console.log(team1 > team2 || 'team1 win' || (team1 < team2 && 'team2 win'));
+//? console.log(printGoals(game.scored));
+const win = (team1, team2) => {
+  return (
+    (team1 < team2 && 'Team 1 is more likely to win') ||
+    (team1 > team2 && 'Team 2 is more likely to win')
+  );
+};
+//? console.log(win(team1, team2));
+
+// ?for (const item of allPlayers) console.log(item);
+
+for (const [i, el] of allPlayers.entries()) {
+  //*Destructuring in for of
+  //?   console.log(`${i + 1}: ${el}`);
+}
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+const openingHours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [weekdays[5]]: {
+    open: 0,
+    close: 12 + 12,
+  },
+};
+const restaurant = {
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic', 'Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Rissotto'],
+  openingHours,
+  order(starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+};
+
+for (const day of weekdays) {
+  const open = restaurant.openingHours[day]?.open ?? ''; //TODO [day] for varible
+  const close = restaurant.openingHours[day]?.close ?? "don't work";
+  //?  console.log(
+  //?   `On ${day}, we ${open === '' ? 'close' : 'open at'} ${open}`,
+  //?  open === '' ? '' : `and close at ${close}`
+  //?);
+}
+//? console.log(restaurant.order?.(0, 1) ?? 'Method does not exit'); //TODO '?.'check order !=null or undefined
+//? console.log(restaurant.orderPizza?.(0, 1) ?? 'Method does not exit');
+
+const users = [{ name: 'Jonas', email: 'romadraguca@gmail.com' }];
+//? console.log(users[0].name ?? 'User array empty');
+
+for (const [day, { open, close }] of Object.entries(openingHours)) {
+  //?   console.log(`On ${day} we open at ${open} and close at ${close}`);
+}
+//challeng #2
+for (const [goal, player] of game?.scored?.entries()) {
+  //?   console.log(`Гол ${goal + 1}: ${player}`);
+}
+for (const [team, score] of Object.entries(game.odds)) {
+  //?   console.log(
+  //?  `Коефіцієнт ${game[team] ? 'перемоги ' + game[team] : 'нічії'} ${score}`
+  //?   );
+}
+let temp = Object.values(game.odds);
+let sum = 0;
+for (const odd of temp) {
+  sum += odd;
+}
+//? console.log((sum /= temp.length));
+//? console.log(sum);
+const scorers = {};
+for (const player of game.scored) {
+  scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+}
+//? console.log(scorers);
+
+const week = new Set([1, 2, 3, 4, 5, 6, 7, 7, 8, 8, 9, 9, 0]); //TODO DELETE ALL Duplicate
+console.log(new Set('Roman Draguca'));
+console.log(week);
+console.log(week.size);
+console.log(week.has(5)); //TODO Check for includes 'value' in obj P.s return true or false ;
+console.log(week.has(50));
+
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+
+const rest = new Map();
+rest.set('name', 'italeano');
+rest.set(1, 'Italy');
+rest.set(2, 'Portugal');
+console.log(...rest);
+console.log(rest.get('name'));
