@@ -21,7 +21,7 @@ const money = [125, 555, 44];
 const tips = [calcTips(money[0]), calcTips(money[1]), calcTips(money[2])];
 const total = [money[0] + tips[0], money[1] + tips[1], money[2] + tips[2]];
 
-//? console.log(money, '\n', tips, '\n', total);
+//?console.log(money, '\n', tips, '\n', total);
 
 const person = {
   firstName: 'roman',
@@ -110,27 +110,27 @@ const calcAge = birthYear => {
 const roman = {
   year: 1991,
   calcAge: function () {
-    console.log(this);
-    console.log(2023 - this.year);
+    //?console.log(this);
+    //?console.log(2023 - this.year);
   },
   firstName: 'roman',
   greet: () => console.log(`hey ${this.firstName}`), //TODO arrow funck use global scrope(Window)PS...output will be undefined(but if you use var undefined will be equal "Matilda")
 };
 // roman.greet();
 // roman.calcAge();
-// console.log(this);
+//?console.log(this);
 
 const test = () => {
-  console.log(arguments);
+  //?console.log(arguments);
   return a + b;
 };
 const test1 = function () {
-  console.log(arguments);
+  //?console.log(arguments);
   //   return a + b;
 };
 
 function test2() {
-  console.log(arguments);
+  //?console.log(arguments);
   //   return a + b;
 }
 // test(1, 322, 3, 22); Error arrow fucnk don't have keyword
@@ -215,7 +215,7 @@ const gameodd = ({ team1, x: draw, team2 } = game.odds);
 
 //TODO const gameodd = (odds { team1, x: draw, team2 } = game);
 const printGoals = function (players) {
-  console.log(players);
+  //?console.log(players);
   return players + ` ${players.length} goals`;
 };
 //? console.log(printGoals(game.scored));
@@ -297,19 +297,39 @@ for (const player of game.scored) {
 //? console.log(scorers);
 
 const week = new Set([1, 2, 3, 4, 5, 6, 7, 7, 8, 8, 9, 9, 0]); //TODO DELETE ALL Duplicate
-console.log(new Set('Roman Draguca'));
-console.log(week);
-console.log(week.size);
-console.log(week.has(5)); //TODO Check for includes 'value' in obj P.s return true or false ;
-console.log(week.has(50));
+//? console.log(new Set('Roman Draguca'));
+//? console.log(week);
+//?console.log(week.size);
+//?console.log(week.has(5)); //TODO Check for includes 'value' in obj P.s return true or false ;
+//?console.log(week.has(50));
 
 const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
 const staffUnique = [...new Set(staff)];
-console.log(staffUnique);
+//? console.log(staffUnique);
 
-const rest = new Map();
-rest.set('name', 'italeano');
-rest.set(1, 'Italy');
-rest.set(2, 'Portugal');
-console.log(...rest);
-console.log(rest.get('name'));
+const question = new Map([
+  [['question'], ['best programming language in the world', 'some']],
+  [1, 'C'],
+  [2, 'JAVA'],
+  [3, 'JS'],
+  ['correct', 3],
+  [true, 'Correct'],
+  [false, 'Try again!'],
+]);
+
+//? console.log(question);
+const hoursMap = new Map(Object.entries(openingHours));
+//? console.log(hoursMap);
+
+//? console.log(question.get('quetion'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+const answer = question.get(Array.from(question.keys())[0]);
+//? console.log(answer); //TODO
+//? console.log(question.get(question.get('correct') === answer));
+
+//? console.log([...question]);
+//? console.log(question.entries());
+//? console.log(question.values());
+//? console.log([...question.keys()]);

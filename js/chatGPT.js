@@ -1,31 +1,20 @@
 const crypto = require('crypto');
 
-function hashFunction(password, sha) {
-  function hashPassword(password) {
-    //? генерувати випадкову сіль
-    const salt = crypto.randomBytes(8).toString('hex');
+function createHashWithSalt(data, salt) {
+  const hash = crypto.createHash('sha256');
+  hash.update(`${data}${salt}`);
+  let result = hash.digest('hex');
 
-    //? хеш пароль за допомогою солі
-    const hash = crypto
-      .pbkdf2Sync(password, salt, 1000, 32, sha)
-      .toString('hex');
-
-    return { salt, hash };
+  let counter = 0;
+  while (result.slice(0, 8) !== '00000000') {
+    counter++;
+    hash.update(`${data}${salt}${counter}`);
   }
 
-  function verifyPassword(password, salt, hash) {
-    //? хеш пароль за допомогою солі
-    const hashedPassword = crypto
-      .pbkdf2Sync(password, salt, 1000, 32, sha)
-      .toString('hex');
-
-    //? Порівняйте хеш з хеш -паролем
-    return hash === hashedPassword;
-  }
-
-  //? Приклад використання
-  const { salt, hash } = hashPassword(password);
-  const isPasswordValid = verifyPassword(password, salt, hash);
-  return `Password: ${password}\nSalt: ${salt}\nHash: ${hash}\nPassword is valid: ${isPasswordValid}`;
+  return result;
 }
-console.log(hashFunction('myPassword', 'sha256'));
+
+const data = 'Hello World';
+const salt = 'mysalt';
+const hash = createHashWithSalt(data, salt);
+console.log(hash);

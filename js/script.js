@@ -612,7 +612,7 @@ function high(x) {
   return x.split(' ')[indexMax];
 }
 
-console.log(high('man i need a taxi up to ubud'));
+//? console.log(high('man i need a taxi up to ubud'));
 
 function high(s) {
   let as = s
@@ -621,3 +621,56 @@ function high(s) {
   return s.split(' ')[as.indexOf(Math.max(...as))];
 }
 //? console.log(high('man i need a taxi up to ubud'));
+
+// У цьому маленькому завданні вам надається рядок чисел, розділених пробілами, і ви повинні повернути найбільше та найменше число.
+
+// Приклади
+// highAndLow('1 2 3 4 5'); // повертає '5 1'
+// highAndLow('1 2 -3 4 5'); // повертає '5 -3'
+// highAndLow('1 9 3 4 -5'); // повертає '9 -5'
+// Примітки
+// Усі числа є дійсними Int32, перевіряти їх не потрібно.
+// У вхідному рядку завжди буде принаймні одне число.
+// Вихідний рядок має складатися з двох чисел, розділених одним пробілом, причому першим є найвище число.
+
+function highAndLow(numbers) {
+  let max = Math.max(...numbers.split(' ').map(el => Number(el))).toString();
+  let min = Math.min(...numbers.split(' ').map(el => Number(el))).toString();
+  return max + ' ' + min;
+}
+// console.log(highAndLow('8 3 -5 42 -1 0 0 -9 4 7 4 -4'));
+
+function highAndLow(numbers) {
+  let numbersArr = numbers.split(' ').map(Number);
+  let max = Math.max(...numbersArr);
+  let min = Math.min(...numbersArr);
+  return max + ' ' + min;
+}
+var cubeChecker = function (volume, side) {
+  return volume % side === 0 && volume > 0 && side > 0;
+};
+//? console.log(cubeChecker(583570, 67));
+// Напишіть функцію, яка приймає ціле число n і рядок s як параметри та повертає рядок s, повторений рівно n разів.
+
+// Приклади (введення - вихід)
+// 6, «І» - «ІІІІІІ»
+// 5, 'Hello' - 'HelloHelloHelloHelloHello'
+function repeatStr(n, s) {
+  let result = [];
+  let i = 0;
+  while (i < n) {
+    i++;
+    result.push(s);
+  }
+  return result.join('');
+}
+//? console.log(repeatStr(6, 'i'));
+
+function grow(x) {
+  return x.reduce((a, b) => a * b);
+}
+//? console.log(grow([1, 2, 3]));
+function getAverage(marks) {
+  return Math.round(marks.reduce((a, b) => a + b) / marks.length);
+}
+//? console.log(getAverage([1, 1, 1, 1, 1, 1, 1, 2]));
