@@ -674,3 +674,107 @@ function getAverage(marks) {
   return Math.round(marks.reduce((a, b) => a + b) / marks.length);
 }
 //? console.log(getAverage([1, 1, 1, 1, 1, 1, 1, 2]));
+
+function findOutlier(integers) {
+  let num1 = [...integers.filter(el => el % 2 === 0)];
+  let num2 = [...integers.filter(el => el % 2 !== 0)];
+  if (num1.length < num2.length) return parseInt(num1);
+  else return parseInt(num2);
+}
+//? console.log(findOutlier([1, 2, 3]));
+
+function divisors(integer) {
+  let result = [];
+  for (let i = 0; i < integer; i++) {
+    if (integer % i === 0 && i !== 1) {
+      result.push(i);
+    }
+  }
+  return result.length >= 1 ? result : `${integer} is prime`;
+}
+
+//? console.log(divisors(15));
+
+function twoSum(numbers, target) {
+  for (let i = 0; i < numbers.length; i++) {
+    for (let j = i + 1; j < numbers.length; j++) {
+      if (numbers[i] + numbers[j] === target) {
+        return [i, j];
+      }
+    }
+  }
+}
+//? console.log(twoSum([1234, 5678, 9012], 14690));
+// Ваше завдання - написати функцію, яка повертає суму наступного серії до n -го терміна (параметр).
+
+// Серія: 1 + 1/4 + 1/7 + 1/10 + 1/13 + 1/16 + ...
+// Правила:
+// Вам потрібно об'єднати відповідь на 2 десяткові місця та повернути її як рядок.
+
+// Якщо задане значення дорівнює 0, то воно повинно повернути 0,00
+
+// Вам будуть надані лише натуральні числа як аргументи.
+
+// Приклади: (Вхід -> Вихід)
+// 1 -> 1 -> "1.00"
+// 2 -> 1 + 1/4 -> "1.25"
+// 5 -> 1 + 1/4 + 1/7 + 1/10 + 1/13 -> "1.57"
+function SeriesSum(n) {
+  for (var s = 0, i = 0; i < n; i++) {
+    s += 1 / (1 + i * 3);
+  }
+
+  return s.toFixed(2);
+}
+//? console.log(SeriesSum(7));
+
+// Бонусний час у великому місті! Товстуни потирають лапи в очікуванні... але хто заробить більше грошей?
+
+// Побудуйте функцію, яка приймає два аргументи (зарплата, бонус). Зарплата буде цілим числом, а премія – логічним.
+
+// Якщо бонус істинний, зарплату слід помножити на 10. Якщо бонус невірний, товстун заробив недостатньо грошей і повинен отримувати лише заявлену зарплату.
+
+// Повертає загальну цифру, яку отримає особа, у вигляді рядка з префіксом «£» (= «u00A3», JS, Go, Java, Scala та Julia), «$» (C#, C++, Ruby, Clojure, Elixir, PHP , Python, Haskell і Lua) або «¥» (Rust).
+
+function bonusTime(salary, bonus) {
+  if (bonus === true) {
+    return '£' + String(salary * 10);
+  } else {
+    return salary;
+  }
+}
+//? console.log(bonusTime(10000, true));
+// Примітки:
+
+// Humanyears> = 1
+// Humanyears - це лише цілі числа
+// Котячі роки
+// 15 котів на перший рік
+// +9 котячих років на другий рік
+// +4 котячі роки на кожен рік після цього
+
+// Собачі роки
+// 15 собак на перший рік
+// +9 років собак на другий рік
+// +5 років собак за кожен рік після цього
+
+const humanYearsCatYearsDogYears = function (humanYears) {
+  if (humanYears === 1) {
+    return [humanYears, 15, 15];
+  } else if (humanYears === 2) {
+    return [humanYears, 15 + 9, 15 + 9];
+  } else {
+    let resultCat = [24];
+    let resultDog = [24];
+    for (let i = 2; i < humanYears; i++) {
+      resultCat.push(4);
+      resultDog.push(5);
+    }
+    return [
+      humanYears,
+      resultCat.reduce((a, b) => a + b),
+      resultDog.reduce((a, b) => a + b),
+    ];
+  }
+};
+console.log(humanYearsCatYearsDogYears(10));

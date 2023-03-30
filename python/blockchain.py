@@ -27,6 +27,6 @@ def find_hash(hash_algorithm, msg, zero):
 if __name__ == '__main__':
 
     message = "Hello world!"
-    zeros = 4
+    zeros = 6
 
-    find_hash(hashlib.sha256, message, zeros)
+    find_hash(hashlib.md5, message, zeros)

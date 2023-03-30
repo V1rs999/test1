@@ -1,0 +1,27 @@
+@import 'Null_STYLE.scss';
+
+body{
+	height: 100%;
+	width: 100%;
+	background-color: black;
+}
+.myImage {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50px;
+	width: 70px;
+	margin: 10px;
+	background-color: aliceblue;
+	&.visible{
+		height: 100%;
+		width: 100%;
+		background-image: url(/img/icons8-eye-50.svg);
+	}
+	&.hidden {
+		display: none;
+		height: 100%;
+		width: 100%;
+		background-image: url(/img/icons8-eye-64.svg);
+	}
+}
